@@ -1,0 +1,559 @@
+/* Fundo animado */
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+
+    background: linear-gradient(
+        -45deg,
+        #ffffff,
+        #ffc2e2,
+        #ff9fd4,
+        #fff7fc,
+        #ffb5de
+    );
+
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+/* Bolhas brilhantes */
+.background::before,
+.background::after {
+    content: "";
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: .45;
+    animation: float 12s ease-in-out infinite;
+}
+
+.background::before {
+    background: rgba(255,255,255,.8);
+    top: -250px;
+    left: -250px;
+}
+
+.background::after {
+    background: rgba(255,120,200,.5);
+    bottom: -300px;
+    right: -250px;
+    animation-delay: -8s;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes float {
+    0%,100%{
+        transform: translate(0,0) scale(1);
+    }
+
+    50%{
+        transform: translate(80px,-60px) scale(1.15);
+    }
+}
+
+/* ========================= */
+/* RESET */
+/* ========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ========================= */
+/* BACKGROUND */
+/* ========================= */
+
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+
+    background:linear-gradient(
+        -45deg,
+        #ff7eb6,
+        #ff9fcf,
+        #c9749a,
+        #db8bd5,
+        #ffb4d9,
+        #ff87c1
+    );
+
+    background-size:400% 400%;
+
+    animation:gradient 15s ease infinite;
+}
+
+@keyframes gradient{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
+.header{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+
+    padding:50px;
+
+}
+
+.header ul{
+
+    list-style:none;
+
+}
+
+.header li{
+
+    margin:20px 0;
+
+}
+
+.header a{
+
+    text-decoration:none;
+    color:#9b4171;
+    font-weight:bold;
+    font-size:20px;
+
+    transition:.3s;
+
+}
+
+.header a:hover{
+
+    color:#ff2f92;
+
+}
+
+.header h1{
+    font-family: "Poppins", sans-serif;
+    font-size:60px;
+    text-shadow:0 0 20px rgba(255,255,255,.5);
+
+}
+
+.photo1{
+
+    width:380px;
+
+    border-radius:45px;
+
+    box-shadow:0 0 40px rgba(255,255,255,.4);
+
+    transition:.4s;
+
+}
+
+.photo1:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* ========================= */
+/* CONTAINER */
+/* ========================= */
+
+.container{
+
+    width:min(1200px,90%);
+    margin:auto;
+
+}
+
+.container h1{
+    font-family: "Poppins", sans-serif;
+    margin-top:70px;
+    margin-bottom:20px;
+    
+    font-size:40px;
+
+}
+
+.container h2{
+    font-family: "Poppins", sans-serif;
+    margin:20px 0;
+
+}
+
+.container p{
+    font-family: "Poppins", sans-serif;
+    font-size:20px;
+
+    line-height:1.8;
+
+}
+
+/* ========================= */
+/* CARDS */
+/* ========================= */
+
+.games,
+.animes{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+
+    gap:25px;
+
+    margin-top:40px;
+
+}
+
+.card{
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+    transition:.4s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px) scale(1.04);
+
+}
+
+.card img{
+
+    width:100%;
+
+    height:300px;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+/* ========================= */
+/* CONTATO */
+/* ========================= */
+
+.contato{
+    font-family: "Poppins", sans-serif;
+    margin-top:100px;
+
+    margin-bottom:80px;
+
+}
+
+.contato img{
+
+    width:60px;
+
+    margin-top:20px;
+
+    transition:.3s;
+
+}
+
+.contato img:hover{
+
+    transform:scale(1.2);
+
+}
+
+.contato h4{
+    font-family: "Poppins", sans-serif;
+    margin-bottom:20px;
+
+    font-weight:400;
+
+}
+
+/* ========================= */
+/* SCROLL */
+/* ========================= */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#ff6eb4;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#ffffff33;
+
+}
+
+.discord{
+    border-radius: 20%;
+}
+
+.carousel{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    margin-top:40px;
+
+}
+
+.carousel-track{
+
+    display:flex;
+
+    gap:25px;
+
+    overflow-x:auto;
+
+    scroll-behavior:smooth;
+
+    padding:20px;
+
+    scrollbar-width:none;
+
+}
+
+.carousel-track::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+.card{
+
+    min-width:250px;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    background:white;
+
+    box-shadow:0 10px 25px rgba(255,120,180,.35);
+
+    transition:.4s;
+
+    flex-shrink:0;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px) scale(1.05);
+
+    box-shadow:0 15px 35px rgba(255,70,170,.45);
+
+}
+
+.card img{
+
+    width:100%;
+
+    height:340px;
+
+    object-fit:cover;
+
+}
+
+.card h3{
+
+    padding:15px;
+
+    text-align:center;
+
+    color:#d63384;
+
+}
+
+.btn{
+
+    position:absolute;
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:#ff4fa3;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+
+    transition:.3s;
+
+    z-index:10;
+
+}
+
+.btn:hover{
+
+    transform:scale(1.1);
+
+    background:#ff8bc1;
+
+    color:white;
+
+}
+
+.prev{
+
+    left:-25px;
+
+}
+
+.next{
+
+    right:-25px;
+
+}
+
+/* ========================= */
+/* CONTATOS */
+/* ========================= */
+
+.socials{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:35px;
+
+    flex-wrap:wrap;
+
+    margin-top:50px;
+
+}
+
+.social-card{
+
+    width:320px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:20px;
+
+    border-radius:22px;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.3);
+
+    box-shadow:0 10px 30px rgba(255,120,180,.25);
+
+    transition:.35s;
+
+}
+
+.social-card:hover{
+
+    transform:translateY(-8px) scale(1.03);
+
+    box-shadow:0 15px 40px rgba(255,80,170,.45);
+
+}
+
+.social-card img{
+
+    width:70px;
+
+    height:70px;
+
+    object-fit:contain;
+
+    margin:0;
+
+}
+
+.social-card h3{
+
+    font-family:"Poppins",sans-serif;
+
+    font-size:24px;
+
+    margin-bottom:5px;
+
+}
+
+.social-card span{
+
+    font-size:18px;
+
+    color:#fff5fa;
+
+}
