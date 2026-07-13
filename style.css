@@ -557,3 +557,38 @@ body{
     color:#fff5fa;
 
 }
+.hero-text h1{
+
+    display:inline-block;
+
+}
+
+.cursor{
+
+    display:inline-block;
+
+    width:2px;
+
+    height:1em;
+
+    background:white;
+
+    margin-left:4px;
+
+    vertical-align:middle;
+
+    animation:blink .8s infinite;
+
+}
+
+@keyframes blink{
+
+    0%,50%{
+        opacity:1;
+    }
+
+    51%,100%{
+        opacity:0;
+    }
+
+}
